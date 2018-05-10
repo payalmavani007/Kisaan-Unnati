@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/test"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtview_kisaan"
+        android:text="Kisaan"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="50dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/colorWhite"
+        />-->
+
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_marginTop="70dp"
+        android:layout_height="150dp"
+        android:src="@drawable/cdrfinallogo"
+        />
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_below="@id/img_logo"
+        android:layout_marginTop="10dp"
+        android:id="@+id/login_linear1"
+        android:layout_width="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/login_linear_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:theme="@style/TextLabel"
+            android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:hint="Username"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:textSize="18dp"
+            android:singleLine="true"
+            android:drawablePadding="10dp"
+            android:backgroundTint="@color/colorblack"
+            android:textColor="@color/colorblack"
+            android:textColorHint="@color/colorblack"
+            android:id="@+id/user_email"
+
+            /></android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:theme="@style/TextLabel"
+            android:layout_height="wrap_content">
+        <EditText
+            android:ems="10"
+            android:textSize="18dp"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/user_pwd"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="25dp"
+
+            android:drawablePadding="10dp"
+            android:backgroundTint="@color/colorblack"
+            android:hint="Password"
+            android:textColorHint="@color/colorblack"
+            android:inputType="textPassword"
+            />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/login_submit"
+            android:text="Log In"
+            android:textSize="18dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_below="@id/login_linear1"
+            android:textAllCaps="false"
+            android:background="@color/colorPrimaryDark"
+            android:drawablePadding="30dp"
+            />
+    </LinearLayout>
+</LinearLayout>

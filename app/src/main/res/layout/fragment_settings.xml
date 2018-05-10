@@ -1,0 +1,124 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="kisaan.sau.pro.com.kishaan.SettingsFragment">
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:gravity="center"
+android:background="@drawable/test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/colorblack"
+                            android:gravity="center"
+                            android:text="Kisaan"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/colorblack"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />-->
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/cdrfinallogo"
+                android:padding="10dp" />
+        </LinearLayout>  <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+        <TextView
+            android:id="@+id/txt_registration"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/test"
+            android:padding="10dp"
+            android:text="Settings"
+            android:textColor="@color/colorblack"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/set_name"
+        android:textSize="30dp"
+
+        android:layout_gravity="start"
+        android:gravity="start"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:text="User Full Name"
+        android:textColor="@color/colorblack"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <Button
+        android:id="@+id/set_logout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/set_name"
+        android:background="@drawable/test"
+        android:drawablePadding="30dp"
+        android:text="Logout"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="5dp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/version"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:text="v.1.0.2"
+        android:layout_alignBottom="@id/set_logout"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/colorblack"
+        />
+    </LinearLayout>
+    </RelativeLayout>
+

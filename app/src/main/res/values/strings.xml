@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Kisan Unnati</string>
+
+    <string name="permission_never_asked">Permission Never Asked</string>
+    <string name="go_to_setting">Go To Setting</string>
+    <string name="cancel">Cancel</string>
+    <string-array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="District">
+        <item>Select District</item>
+        <item>Ahmedabad</item>
+        <item>Rajkot</item>
+        <item>Gunagadh</item>
+    </string-array>
+
+    <string-array name="Taluka">
+        <item>Select Taluka</item>
+        <item>Dhoraji</item>
+        <item>Jetpur</item>
+        <item>Gondal</item>
+    </string-array>
+    <string-array name="State">
+        <item>Gujarat</item>
+        <item>Maharastra</item>
+
+    </string-array>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <string name="title_shop">Shop</string>
+    <string name="title_gifts">Gifts</string>
+    <string name="title_cart">Cart</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_aboutus">Aboutus</string>
+    <string name="title_Form">Form</string>
+    <!-- <resources>
+
+    </resources>-->
+</resources>

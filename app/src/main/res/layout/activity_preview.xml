@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="kisaan.sau.pro.com.kishaan.Preview">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:gravity="center"
+android:background="@drawable/test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/colorblack"
+                                android:gravity="center"
+                                android:text="Kisaan"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/colorblack"
+                                android:textSize="25dp"
+                                android:textStyle="bold" />-->
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/cdrfinallogo"
+                    android:padding="10dp" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorblack" />
+        </LinearLayout>
+        <TextView
+        android:id="@+id/preview"
+        android:textStyle="bold"
+        android:textColor="@color/colorblack"
+        android:textSize="25dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+            android:layout_height="55dp"
+        android:text="Registration Preview"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/test"
+        />
+
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln1"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorblack"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        />
+
+
+    <TextView
+        android:textSize="15dp"
+        android:layout_weight="1"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/colorblack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mr."
+        android:id="@+id/title_preview"
+        />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+
+    <LinearLayout
+
+        android:layout_margin="15dp"
+        android:id="@+id/ln2"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First Name"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:id="@+id/fname_preview"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rajesh"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln3"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mehta"
+            android:id="@+id/lname_preview"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln4"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            />
+
+        <TextView
+            android:id="@+id/pnum_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0123456789"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:textSize="15dp" />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln5"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-mail"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="r@gmail.com"
+            android:id="@+id/email_preview"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln6"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:id="@+id/gender_preview"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln7"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date of Birth"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:id="@+id/dbo_preview"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="27 Mar 2018"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln8"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="District"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/district_preview"
+            android:text="Ahmedabad"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln9"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taluka"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:id="@+id/taluka_preview"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Botad"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln10"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Village"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bavla"
+            android:id="@+id/village_preview"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln11"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zipcode"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="012345"
+            android:id="@+id/zipcode_preview"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln12"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nominee Full Name"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rajesh Mehta"
+            android:id="@+id/nomifnmae_preview"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln13"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nominee Phone Number"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0123456789"
+            android:id="@+id/nomipnum_preview"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln14"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nominee Birth Date"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="27 Mar 2018"
+            android:id="@+id/nomidob_preview"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln15"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/addr_preview"
+            android:text="Sola Road"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Farmer's Aadhar_Number"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="012345678912345"
+            android:id="@+id/aadhar1_preview"
+            />
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aadhar Front Image:"
+            android:textStyle="bold"
+            android:layout_margin="15dp"
+            android:textColor="@color/colorblack"
+            android:textSize="15dp"
+
+            />
+        <ImageView
+            android:layout_width="250dp"
+            android:id="@+id/preview_img1"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_height="150dp" />
+    <!--<LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln17"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Farmer Aadhar Number2"
+            />
+&lt;!&ndash;
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0123456789123456"
+            android:textAlignment="viewEnd"
+            android:id="@+id/aadhar2_preview"
+
+            android:textColor="@color/colorblack"
+            android:textSize="15dp" />&ndash;&gt;
+    </LinearLayout>-->
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aadhar Rear Image:"
+            android:textStyle="bold"
+            android:layout_margin="15dp"
+            android:textColor="@color/colorblack"
+            android:textSize="15dp"
+
+            />
+        <ImageView
+            android:layout_width="250dp"
+            android:id="@+id/preview_img2"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_height="150dp" />
+     <!--   <LinearLayout
+            android:layout_margin="15dp"
+            android:id="@+id/ln18"
+            android:layout_below="@+id/preview"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorblack"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aadhar Front Pic"
+                />
+
+            <ImageView
+                android:id="@+id/preview_aadhar1_img"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+        </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+
+        <LinearLayout
+            android:layout_margin="15dp"
+            android:id="@+id/ln18"
+            android:layout_below="@+id/preview"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorblack"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aadhar Rear Pic"
+                />
+
+            <ImageView
+                android:id="@+id/preview_aadhar2_img"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+        </LinearLayout>
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln18"
+        android:layout_below="@+id/preview"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Land pics"
+            />
+
+        <ImageView
+            android:id="@+id/preview_landpics_img"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+    </LinearLayout>-->
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Land Pics:"
+    android:textStyle="bold"
+    android:layout_margin="15dp"
+    android:textColor="@color/colorblack"
+    android:textSize="15dp"
+
+    />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:id="@+id/preview_img3"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_height="150dp" />
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/ln19"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorblack"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emp Code"
+            />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="123456"
+            android:id="@+id/empcode_preview"
+
+
+            />
+    </LinearLayout>
+
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"/>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:id="@+id/ln20"
+        android:layout_below="@+id/preview"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:layout_weight="1"
+            android:id="@+id/preview_edit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/test"
+            android:drawablePadding="30dp"
+            android:text="Edit"
+        android:layout_margin="5dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="18dp" />
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/preview_Update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/test"
+            android:drawablePadding="30dp"
+            android:text="Submit"
+            android:layout_margin="5dp"
+            android:textAllCaps="false"
+            android:textColor="@color/colorblack"
+            android:textSize="18dp" />
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>
