@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             Window w = getWindow();
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation =  findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
         navigation.setSelectedItemId(R.id.navigation_profile);
 
@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     fragment = new TalukaProfileFragment();
                     fragmentTransaction.replace(R.id.fragment_container, new TalukaProfileFragment()).commit();
                 }
-                if (Integer.parseInt(preferences.getString("rolemanagement_id", "")) == 4) {
+                /*if (Integer.parseInt(preferences.getString("rolemanagement_id", "")) == 4) {
                     fragment = new TalukaProfileFragment();
                     fragmentTransaction.replace(R.id.fragment_container, new VillageProfileFragment()).commit();
-                }
-                if (Integer.parseInt(preferences.getString("rolemanagement_id", "")) == 5) {
+                }*/
+                if (Integer.parseInt(preferences.getString("rolemanagement_id", "")) == 4) {
                     fragment = new EmployeeProfileFragment(Integer.parseInt(preferences.getString("id", "")));
                     fragmentTransaction.replace(R.id.fragment_container, new EmployeeProfileFragment(Integer.parseInt(preferences.getString("id", "")))).commit();
                 }

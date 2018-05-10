@@ -71,7 +71,6 @@ public class TalukaProfileFragment extends Fragment {
         SharedPreferences sp = getContext().getSharedPreferences("monthly",Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = sp.edit();
 
-
         b=getArguments();
 /*
         ListView lv = view.findViewById(R.id.recylr_taluka);
@@ -187,7 +186,6 @@ public class TalukaProfileFragment extends Fragment {
                                     mYear = c.get(Calendar.YEAR);
                                     mMonth = c.get(Calendar.MONTH);
                                     mDay = c.get(Calendar.DAY_OF_MONTH);
-
                                     String dd=txtdate.getText().toString();
                                     final String day=dd.substring(0,2);
                                     final String month=dd.substring(3,5);
@@ -387,7 +385,6 @@ public class TalukaProfileFragment extends Fragment {
                                             Toast.makeText(getContext(), "No Values..!", Toast.LENGTH_SHORT).show();
                                         }
 
-
                                         } catch (JSONException e) {
                                             e.printStackTrace();
                                         }
@@ -447,7 +444,7 @@ public class TalukaProfileFragment extends Fragment {
 
             final String finalUrl = url;
             final StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_taluka?user_id=" +
-                    preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "") + "&date1=" + formattedDate + "date2=&month_flag=0"
+                    preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "") + "&date1=" + formattedDate + "&date2=&month_flag=0"
                     , new Response.Listener<String>() {
 
                 @Override

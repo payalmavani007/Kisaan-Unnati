@@ -1,7 +1,6 @@
 package kisaan.sau.pro.com.kishaan.Adapter;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -10,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.json.JSONArray;
@@ -18,8 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import kisaan.sau.pro.com.kishaan.EmployeeProfileFragment;
 import kisaan.sau.pro.com.kishaan.R;
-import kisaan.sau.pro.com.kishaan.TalukaProfileFragment;
-import kisaan.sau.pro.com.kishaan.VillageProfileFragment;
+import kisaan.sau.pro.com.kishaan.VillageFragment;
 
 /**
  * Created by Payal on 3/19/2018.
@@ -27,11 +24,11 @@ import kisaan.sau.pro.com.kishaan.VillageProfileFragment;
 
 public class TalukaDataAdapter extends RecyclerView.Adapter<TalukaDataAdapter.DistDataViewHolder> {
     private Context mCtx;
-    //    private List<Data> dataList;
     JSONArray array;
     FragmentManager fragmentManager;
 
-    public TalukaDataAdapter(Context mCtx, JSONArray array,FragmentManager fragmentManager) {
+    public TalukaDataAdapter(Context mCtx, JSONArray array,FragmentManager fragmentManager)
+    {
         this.mCtx = mCtx;
         this.array = array;
         this.fragmentManager=fragmentManager;
@@ -46,7 +43,7 @@ public class TalukaDataAdapter extends RecyclerView.Adapter<TalukaDataAdapter.Di
     }
 
     @Override
-    public void onBindViewHolder(final DistDataViewHolder holder, final int position) {
+    public void onBindViewHolder(final TalukaDataAdapter.DistDataViewHolder holder, final int position) {
 //        Data data = dataList.get(position);
 
         try {
@@ -64,23 +61,23 @@ public class TalukaDataAdapter extends RecyclerView.Adapter<TalukaDataAdapter.Di
 
 
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                    VillageFragment fragment = null;
                     try {
-
-                        VillageProfileFragment fragment = new VillageProfileFragment(obj.getInt("id"));
-                        final Bundle bundle = new Bundle();
-                        bundle.putString("village_name", holder.textname.getText().toString());
-                        fragment.setArguments(bundle);
-
-
-                        fragmentTransaction.addToBackStack("taluka admin");
-                       // fragmentTransaction.setCustomAnimations(android.R.anim.slide_out_right,android.R.anim.slide_in_left);
-
-
-                        fragmentTransaction.replace(R.id.fragment_container, fragment).commit();
-
+                        fragment = new VillageFragment(obj.getInt("id"));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+
+                    final Bundle bundle = new Bundle();
+                    bundle.putString("village_name", holder.textname.getText().toString());
+                    fragment.setArguments(bundle);
+
+
+                    fragmentTransaction.addToBackStack("taluka admin");
+                    // fragmentTransaction.setCustomAnimations(android.R.anim.slide_out_right,android.R.anim.slide_in_left);
+
+                    fragmentTransaction.replace(R.id.fragment_container, fragment).commit();
 
                 }
             });
