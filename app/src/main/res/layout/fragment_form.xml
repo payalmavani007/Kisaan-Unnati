@@ -508,27 +508,49 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
             android:background="@color/colorblack" />
+    <LinearLayout
+        android:id="@+id/lin_unid4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:theme="@style/TextLabel">
 
-            <EditText
-
+            <TextView
                 android:id="@+id/village"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
                 android:backgroundTint="@color/colorblack"
                 android:hint="Village"
                 android:inputType="text"
                 android:textColor="@color/colorblack"
                 android:textColorHint="@color/colorblack"
                 android:textSize="15dp" />
-        </android.support.design.widget.TextInputLayout>
-
+            <TextView
+                android:id="@+id/village_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorblack"
+                android:text="0"
+                android:textColor="@color/colorblack"
+                android:textColorHint="@color/colorblack"
+                android:textSize="15dp"
+                android:visibility="gone" />
+    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorblack" />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -74,8 +74,8 @@ import static android.content.Context.MODE_PRIVATE;
  * A simple {@link Fragment} subclass.
  */
 public class FormFragment extends Fragment {
-    EditText edt_fname, edt_lname, edt_email, edt_pnum, edt_village, edt_zipcode, edt_nomifname, edt_nomipnum, edt_address, edt_addhar1, edt_landpics, edt_empcode;
-    TextView txt_taluka, edt_title, txt_id, txt_id1, txt_registration, datepiker_date_txt1, datepiker1, txt_dist, datepiker_date_txt2, datepiker2;
+    EditText edt_fname, edt_lname, edt_email, edt_pnum,  edt_zipcode, edt_nomifname, edt_nomipnum, edt_address, edt_addhar1, edt_landpics, edt_empcode;
+    TextView txt_taluka, edt_title,edt_village, txt_id, txt_id1,txt_id4, txt_registration, datepiker_date_txt1, datepiker1, txt_dist, datepiker_date_txt2, datepiker2;
     ImageView imgcal1, imgcal2;
     LinearLayout linearLayout, linear_taluka;
     RadioGroup genderGroup;
@@ -324,9 +324,6 @@ hud.dismiss();
                                 }
                             }
 
-
-
-
                         } else {
                         }
 
@@ -354,6 +351,7 @@ hud.dismiss();
 
        // if (preferences.getString("talukas_id","").equals("0")){
            LinearLayout linear_taluka = view.findViewById(R.id.lin_unid2);
+
         linear_taluka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -440,6 +438,98 @@ hud.dismiss();
 
             }
                                 });
+
+        LinearLayout linear_taluka4 = view.findViewById(R.id.lin_unid4);
+        txt_id4= view.findViewById(R.id.village_id);
+        linear_taluka4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final KProgressHUD hud = KProgressHUD.create(getContext())
+                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                        .setCancellable(true)
+                        .setAnimationSpeed(2)
+                        .setDimAmount(0.5f)
+                        .show();
+                final Dialog dialog = new Dialog(getContext());
+                dialog.setContentView(R.layout.listtaluka);
+                lv1 = dialog.findViewById(R.id.lv1);
+                dialog.setCancelable(true);
+                //final String url = " http://kisanunnati.com/kisan/talukas_village_list?talukas_id=" + txt_id.getText().toString();
+                final String url = "http://kisanunnati.com/kisan/fetch_village_name?village_id"
+                        + txt_id4.getText().toString();
+              //  http://192.168.1.200/kishaan2/user_village?user_id=8&talukas_id=2&date1=2018-03-30&date2&month_flag=0
+              //  http://kisanunnati.com/kisan/fetch_village_name?village_id=1
+                // dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("Dialog Responce", response);
+                        try {
+                            JSONObject resp = new JSONObject(response);
+                            hud.dismiss();
+                            if (resp.getInt("status") == 0) {
+                                JSONArray data = resp.getJSONArray("villages");
+                                Log.e("Village response array",data.toString());
+
+                                final String[] stringArray = new String[data.length()];
+                                final int[] intArray = new int[data.length()];
+                                for (int i = 0, count = data.length(); i < count; i++) {
+                                    try {
+                                        JSONObject object = (JSONObject) data.get(i);
+                                        String jsonString = object.getString("village_name");
+                                        stringArray[i] = jsonString;
+                                        int id = object.getInt("id");
+                                        intArray[i] = id;
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, stringArray);
+                                lv1.setAdapter(adapter);
+                                dialog.show();
+                                lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                    @Override
+                                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                        TextView textView = (TextView) view;
+
+                                        edt_village.setText(stringArray[i]);
+                                        txt_id4.setText(String.valueOf(intArray[i]));
+
+                                        dialog.dismiss();
+
+
+                                    }
+                                });
+
+                            } else {
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        return new HashMap<>();
+                    }
+                };
+                Volley.newRequestQueue(getContext()).add(stringRequest);
+
+
+
+    }
+        });
+
+
+
 
 
 

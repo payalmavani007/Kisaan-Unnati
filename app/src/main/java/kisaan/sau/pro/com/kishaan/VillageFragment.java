@@ -21,25 +21,21 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.kaopiz.kprogresshud.KProgressHUD;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-
 import kisaan.sau.pro.com.kishaan.Adapter.VillageAdapter;
 
 
@@ -138,7 +134,7 @@ public class VillageFragment extends Fragment {
 
                                     try {
                                         JSONObject object = new JSONObject(response);
-                                        JSONArray array = object.getJSONArray("village");
+                                        JSONArray array = object.getJSONArray("data");
 
                                         editor.putString("month","yes").apply();
 
@@ -252,7 +248,7 @@ public class VillageFragment extends Fragment {
 
                                                     try {
                                                         JSONObject object = new JSONObject(response);
-                                                        JSONArray array = object.getJSONArray("village");
+                                                        JSONArray array = object.getJSONArray("data");
                                                         if (b!=null)
                                                             totalEntries.setText(b.getString("village_name")+": "+object.getString("Total Form Count"));
                                                         else
@@ -289,8 +285,6 @@ public class VillageFragment extends Fragment {
                                     } catch (ParseException e) {
                                         e.printStackTrace();
                                     }
-
-
                                 }
                             });
                             custoendsdate = dialog.findViewById(R.id.btn_custom_end_date);
@@ -368,14 +362,16 @@ public class VillageFragment extends Fragment {
                                 String cdate = formatter.format(dx);
                                 txtdate.setText(cdate);
                                 String date = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
-                                StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_taluka?user_id=" + preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "")
+                                StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                                        "  http://kisanunnati.com/kisan/user_taluka?user_id=" + preferences.getString("id", "") +
+                                                "&taluka_id=" + preferences.getString("talukas_id", "")
                                         + "&date1=" + date + "&date2="+date+"&month_flag=0", new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
 
                                         try {
                                             JSONObject object = new JSONObject(response);
-                                            JSONArray array = object.getJSONArray("village");
+                                            JSONArray array = object.getJSONArray("data");
                                             if (b!=null)
                                                 totalEntries.setText(b.getString("village_name")+": "+object.getString("Total Form Count"));
                                             else
@@ -407,7 +403,6 @@ public class VillageFragment extends Fragment {
                         }, Integer.parseInt(year),Integer.parseInt(month)-1, Integer.parseInt(day));
                 datePickerDialog.show();
 
-
             }
         });
 
@@ -436,13 +431,10 @@ public class VillageFragment extends Fragment {
 
         /*
 
-
         final StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_taluka?user_id="
                 + preferences.getString("id", "")+"&taluka_id="+preferences.getString("talukas_id", "")+
                 "&date1="+formattedDate+"&date2="+formattedDate+"&month_flag=0", new Response.Listener<String>() {*/
         // @SuppressLint("SetTextI18n")
-
-
 
         if (!url.equals("")) {
 
@@ -459,7 +451,7 @@ public class VillageFragment extends Fragment {
                         Log.e("employees list", response);
                         JSONObject object = new JSONObject(response);
 
-                        JSONArray array = object.getJSONArray("village");
+                        JSONArray array = object.getJSONArray("data");
 
                         if (b != null)
                             totalEntries.setText(b.getString("village_name") + ": " + object.getString("Total Form Count"));
@@ -491,7 +483,5 @@ public class VillageFragment extends Fragment {
         }
         return view;
     }
-
-
 
 }
