@@ -31,7 +31,7 @@ import java.util.Locale;
 import kisaan.sau.pro.com.kishaan.ImageUploading.VolleyMultipartRequest;
 
 public class Preview extends AppCompatActivity {
-    TextView title_preview, gender_preview, dob_preview, nomidob_preview, district_preview, taluka_preview, fname_preview, lname_preview, pnum_preview, email_preview, village_preview, zipcode_preview, nomifname_preview, nominepnum_preview, addr_preview, aadhar1_preview, aadhar2_preview, landpics_preview, empcode_preview;
+    TextView title_preview, gender_preview, dob_preview, nomidob_preview, district_preview, taluka_preview, fname_preview, lname_preview, pnum_preview, email_preview, villageid_preview,village_preview, zipcode_preview, nomifname_preview, nominepnum_preview, addr_preview, aadhar1_preview, aadhar2_preview, landpics_preview, empcode_preview;
     Button btn_submit, btn_edit;
     ImageView img1,img2,img3;
 
@@ -105,6 +105,7 @@ public class Preview extends AppCompatActivity {
         email_preview.setText(getIntent().getStringExtra("E-mail"));
 
         village_preview = findViewById(R.id.village_preview);
+        villageid_preview = findViewById(R.id.villageid_preview);
         village_preview.setText(getIntent().getStringExtra("Village"));
 
         zipcode_preview = findViewById(R.id.zipcode_preview);
@@ -160,6 +161,7 @@ public class Preview extends AppCompatActivity {
                         "&district=" + district_preview.getText().toString().replace(" ", "%20") +
                         "&taluka=" + taluka_preview.getText().toString().replace(" ", "%20") +
                         "&village=" + village_preview.getText().toString().replace(" ", "%20") +
+                        "&village_id=" + villageid_preview.getText().toString().replace(" ", "%20") +
                         "&zipcode=" + zipcode_preview.getText().toString().replace(" ", "%20") +
                         "&nominee_full_name=" + nomifname_preview.getText().toString().replace(" ", "%20") +
                         "&nominee_phone=" + nominepnum_preview.getText().toString().replace(" ", "%20") +

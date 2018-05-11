@@ -120,7 +120,7 @@ public class VillageFragment extends Fragment {
                             System.out.println("Current time => " + c);
 
                             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                            String date = df.format(c);
+                            final String date = df.format(c);
                             final KProgressHUD hud = KProgressHUD.create(getContext())
                                     .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
                                     .setCancellable(false)
@@ -131,7 +131,8 @@ public class VillageFragment extends Fragment {
                                     + "&date1=" + date + "&date2&month_flag=1", new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-
+                                    Log.e("village url","  http://kisanunnati.com/kisan/user_taluka?user_id=" + preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "")
+                                            + "&date1=" + date + "&date2&month_flag=1");
                                     try {
                                         JSONObject object = new JSONObject(response);
                                         JSONArray array = object.getJSONArray("data");
@@ -242,6 +243,7 @@ public class VillageFragment extends Fragment {
                                                     + "&date1=" + date1 + "&date2=" + date2 + "&month_flag=1";
                                         }
                                         if (!url.equals("")){
+                                            Log.e("village url",url);
                                             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                                                 @Override
                                                 public void onResponse(String response) {
@@ -361,14 +363,16 @@ public class VillageFragment extends Fragment {
                                 SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
                                 String cdate = formatter.format(dx);
                                 txtdate.setText(cdate);
-                                String date = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
+                                final String date = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
                                 StringRequest stringRequest = new StringRequest(Request.Method.POST,
                                         "  http://kisanunnati.com/kisan/user_taluka?user_id=" + preferences.getString("id", "") +
                                                 "&taluka_id=" + preferences.getString("talukas_id", "")
                                         + "&date1=" + date + "&date2="+date+"&month_flag=0", new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
-
+                                        Log.e("village url","  http://kisanunnati.com/kisan/user_taluka?user_id=" + preferences.getString("id", "") +
+                                                "&taluka_id=" + preferences.getString("talukas_id", "")
+                                                + "&date1=" + date + "&date2="+date+"&month_flag=0");
                                         try {
                                             JSONObject object = new JSONObject(response);
                                             JSONArray array = object.getJSONArray("data");
@@ -437,7 +441,7 @@ public class VillageFragment extends Fragment {
         // @SuppressLint("SetTextI18n")
 
         if (!url.equals("")) {
-
+            Log.e("village url",url);
             final String finalUrl = url;
             final StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_taluka?user_id=" +
                     preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "") + "&date1=" + formattedDate + "&date2=&month_flag=0"

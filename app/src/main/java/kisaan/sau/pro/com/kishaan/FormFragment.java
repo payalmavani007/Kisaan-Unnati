@@ -75,7 +75,7 @@ import static android.content.Context.MODE_PRIVATE;
  */
 public class FormFragment extends Fragment {
     EditText edt_fname, edt_lname, edt_email, edt_pnum,  edt_zipcode, edt_nomifname, edt_nomipnum, edt_address, edt_addhar1, edt_landpics, edt_empcode;
-    TextView txt_taluka, edt_title,edt_village, txt_id, txt_id1,txt_id4, txt_registration, datepiker_date_txt1, datepiker1, txt_dist, datepiker_date_txt2, datepiker2;
+    TextView txt_taluka,txt_village, edt_title,edt_village, txt_id, txt_id1,txt_villageid,txt_id4, txt_registration, datepiker_date_txt1, datepiker1, txt_dist, datepiker_date_txt2, datepiker2;
     ImageView imgcal1, imgcal2;
     LinearLayout linearLayout, linear_taluka;
     RadioGroup genderGroup;
@@ -136,6 +136,9 @@ scroll.postDelayed(new Runnable() {
         //txt_country = findViewById(R.id.txt_india);
         txt_id = view.findViewById(R.id.dist_id);
         txt_id1 = view.findViewById(R.id.taluka_id);
+
+        txt_village= view.findViewById(R.id.formvillage_txt);
+        txt_villageid = view.findViewById(R.id.village_id);
         txt_registration = view.findViewById(R.id.txt_registration);
 
 
@@ -204,7 +207,7 @@ scroll.postDelayed(new Runnable() {
 
         final Dialog dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.listtaluka);
-        lv1 = dialog.findViewById(R.id.lv1);
+        final ListView lv1 = dialog.findViewById(R.id.lv1);
         dialog.setCancelable(true);
 
 
@@ -363,7 +366,7 @@ hud.dismiss();
                         .show();
                 final Dialog dialog = new Dialog(getContext());
                 dialog.setContentView(R.layout.listtaluka);
-                lv1 = dialog.findViewById(R.id.lv1);
+                final ListView lv1 = dialog.findViewById(R.id.lv1);
                 dialog.setCancelable(true);
 
 //                String url = " http://kisanunnati.com/kisan/fetch_talukas_name";
@@ -398,6 +401,7 @@ hud.dismiss();
 
                                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, stringArray);
                                 lv1.setAdapter(adapter);
+
                                 dialog.show();
                                 lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                     @Override
@@ -439,11 +443,102 @@ hud.dismiss();
             }
                                 });
 
-        LinearLayout linear_taluka4 = view.findViewById(R.id.lin_unid4);
-        txt_id4= view.findViewById(R.id.village_id);
-        linear_taluka4.setOnClickListener(new View.OnClickListener() {
+        LinearLayout linear_taluka4 = view.findViewById(R.id.village_layout);
+        txt_id4= view.findViewById(R.id.formvillage_txt);
+
+
+        txt_id4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final KProgressHUD hud = KProgressHUD.create(getContext())
+                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                        .setCancellable(true)
+                        .setAnimationSpeed(2)
+                        .setDimAmount(0.5f)
+                        .show();
+                final Dialog dialog = new Dialog(getContext());
+                dialog.setContentView(R.layout.listtaluka);
+               final ListView lv1 = dialog.findViewById(R.id.lv1);
+                dialog.setCancelable(true);
+
+//                String url = " http://kisanunnati.com/kisan/fetch_talukas_name";
+                //?talukas_id=" + txt_id1.getText().toString()
+                final String url = " http://kisanunnati.com/kisan/talukas_village_list?talukas_id=" + txt_id1.getText().toString();
+
+                // dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("Dialog Responce", response);
+                        try {
+                            JSONObject resp = new JSONObject(response);
+                            hud.dismiss();
+                            if (resp.getInt("status") == 0) {
+                                JSONArray data = resp.getJSONArray("village");
+
+
+                                final String[] stringArray = new String[data.length()];
+                                final int[] intArray = new int[data.length()];
+                                for (int i = 0, count = data.length(); i < count; i++) {
+                                    try {
+                                        JSONObject object = (JSONObject) data.get(i);
+                                        String jsonString = object.getString("village_name");
+                                        stringArray[i] = jsonString;
+                                        int id = object.getInt("id");
+                                        intArray[i] = id;
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, stringArray);
+                                lv1.setAdapter(adapter);
+                                dialog.show();
+                                lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                    @Override
+                                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                        TextView textView = (TextView) view;
+
+                                        txt_village.setText(stringArray[i]);
+                                        txt_villageid.setText(String.valueOf(intArray[i]));
+
+                                        dialog.dismiss();
+
+
+                                    }
+                                });
+
+                            } else {
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        return new HashMap<>();
+                    }
+                };
+                Volley.newRequestQueue(getContext()).add(stringRequest);
+
+            }
+        });
+
+
+
+        /*linear_taluka4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(getContext(), "Village layout clicked", Toast.LENGTH_SHORT).show();
                 final KProgressHUD hud = KProgressHUD.create(getContext())
                         .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
                         .setCancellable(true)
@@ -526,7 +621,7 @@ hud.dismiss();
 
 
     }
-        });
+        });*/
 
 
 
@@ -1168,7 +1263,7 @@ hud.dismiss();
 
                 if (edt_title.getText().toString().equals("") || edt_fname.getText().toString().equals("") || edt_lname.getText().toString().equals("")
 
-                        || edt_pnum.getText().toString().equals("") || edt_village.getText().toString().equals("") || edt_zipcode.getText().toString().equals("") || edt_nomifname.getText().toString().equals("")
+                        || edt_pnum.getText().toString().equals("") || txt_village.getText().toString().equals("") || edt_zipcode.getText().toString().equals("") || edt_nomifname.getText().toString().equals("")
                         || edt_nomipnum.getText().toString().equals("") || edt_address.getText().toString().equals("") || edt_addhar1.getText().toString().equals("") /*|| edt_addhar2_.getText().toString().equals("")*/ ||
                         edt_empcode.getText().toString().equals("")) {
                     Toast.makeText(getContext(), "Enter all fields.", Toast.LENGTH_SHORT).show();
@@ -1294,7 +1389,8 @@ hud.dismiss();
                     intent.putExtra("Date of birth", datepiker_date_txt1.getText().toString());
                     intent.putExtra("District", txt_dist.getText().toString());
                     intent.putExtra("Taluka", txt_taluka.getText().toString());
-                    intent.putExtra("Village", edt_village.getText().toString());
+                    intent.putExtra("Village", txt_village.getText().toString());
+                    intent.putExtra("Villageid", txt_villageid.getText().toString());
                     intent.putExtra("Zipcode", edt_zipcode.getText().toString());
                     intent.putExtra("Nominee Full Name", edt_nomifname.getText().toString());
                     intent.putExtra("Nominee phone number", edt_nomipnum.getText().toString());

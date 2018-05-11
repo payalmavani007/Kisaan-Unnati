@@ -51,7 +51,7 @@ public class TalukaDataAdapter extends RecyclerView.Adapter<TalukaDataAdapter.Di
             Typeface tf = Typeface.createFromAsset(mCtx.getAssets(), "fonts/segoeui.ttf");
             holder.textname.setTypeface(tf);
             holder.textcontact.setTypeface(tf);
-                holder.textname.setText(obj.getString("name"));
+                holder.textname.setText(obj.getString("village_name"));
 
             holder.textcontact.setText(obj.getString("count"));
 

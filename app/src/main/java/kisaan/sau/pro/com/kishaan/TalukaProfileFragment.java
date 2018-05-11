@@ -125,7 +125,7 @@ public class TalukaProfileFragment extends Fragment {
                                     .setAnimationSpeed(2)
                                     .setDimAmount(0.5f)
                                     .show();
-                            StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_taluka?user_id=" + preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "")
+                            StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_village?user_id=" + preferences.getString("id", "") + "&talukas_id=" + preferences.getString("talukas_id", "")
                                     + "&date1=" + date + "&date2&month_flag=1", new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
@@ -233,10 +233,10 @@ public class TalukaProfileFragment extends Fragment {
                                         Date d1=sdf.parse(date1);
                                         Date d2=sdf.parse(date2);
                                         if (d1.before(d2)){
-                                            url="  http://kisanunnati.com/kisan/user_taluka?user_id=" + preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "")
+                                            url="  http://kisanunnati.com/kisan/user_village?user_id=" + preferences.getString("id", "") + "&talukas_id=" + preferences.getString("talukas_id", "")
                                                     + "&date1=" + date2 + "&date2=" + date1 + "&month_flag=1";
                                         }if (d2.before(d1)){
-                                            url="  http://kisanunnati.com/kisan/user_taluka?user_id=" + preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "")
+                                            url="  http://kisanunnati.com/kisan/user_village?user_id=" + preferences.getString("id", "") + "&talukas_id=" + preferences.getString("talukas_id", "")
                                                     + "&date1=" + date1 + "&date2=" + date2 + "&month_flag=1";
                                         }
                                         if (!url.equals("")){
@@ -364,7 +364,7 @@ public class TalukaProfileFragment extends Fragment {
                                 String cdate = formatter.format(dx);
                                 txtdate.setText(cdate);
                                 String date = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
-                                StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_taluka?user_id=" + preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "")
+                                StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_village?user_id=" + preferences.getString("id", "") + "&talukas_id=" + preferences.getString("talukas_id", "")
                                         + "&date1=" + date + "&date2="+date+"&month_flag=0", new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
@@ -422,19 +422,19 @@ public class TalukaProfileFragment extends Fragment {
 
         String url = "";
         if (sp.getString("month","").equals("yes")) {
-        url = "  http://kisanunnati.com/kisan/user_taluka?user_id="+
-                preferences.getString("id", "")+"&taluka_id="+preferences.getString("talukas_id", "")+"&date1="+date+"date2=&month_flag=0";
+        url = "  http://kisanunnati.com/kisan/user_village?user_id="+
+                preferences.getString("id", "")+"&talukas_id="+preferences.getString("talukas_id", "")+"&date1="+date+"&date2=&month_flag=0";
         }
         else {
-            url = "  http://kisanunnati.com/kisan/user_taluka?user_id="+
-                    preferences.getString("id", "")+"&taluka_id="+preferences.getString("talukas_id", "")+"&date1="+formattedDate+"date2=&month_flag=0";
+            url = "  http://kisanunnati.com/kisan/user_village?user_id="+
+                    preferences.getString("id", "")+"&talukas_id="+preferences.getString("talukas_id", "")+"&date1="+formattedDate+"&date2=&month_flag=0";
         }
 
         /*
 
 
-        final StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_taluka?user_id="
-                + preferences.getString("id", "")+"&taluka_id="+preferences.getString("talukas_id", "")+
+        final StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_village?user_id="
+                + preferences.getString("id", "")+"&talukas_id="+preferences.getString("talukas_id", "")+
                 "&date1="+formattedDate+"&date2="+formattedDate+"&month_flag=0", new Response.Listener<String>() {*/
            // @SuppressLint("SetTextI18n")
 
@@ -443,8 +443,9 @@ public class TalukaProfileFragment extends Fragment {
         if (!url.equals("")) {
 
             final String finalUrl = url;
-            final StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_taluka?user_id=" +
-                    preferences.getString("id", "") + "&taluka_id=" + preferences.getString("talukas_id", "") + "&date1=" + formattedDate + "&date2=&month_flag=0"
+            final StringRequest stringRequest = new StringRequest(Request.Method.POST, "  http://kisanunnati.com/kisan/user_village?user_id=" +
+                    preferences.getString("id", "") + "&talukas_id=" + preferences.getString("talukas_id", "") +
+                    "&date1=" + formattedDate + "&date2=&month_flag=0"
                     , new Response.Listener<String>() {
 
                 @Override

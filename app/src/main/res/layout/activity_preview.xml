@@ -426,6 +426,18 @@ android:background="@drawable/test"
             android:text="Bavla"
             android:id="@+id/village_preview"
             />
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bavla"
+            android:visibility="gone"
+            android:id="@+id/villageid_preview"
+            />
     </LinearLayout>
         <View
             android:layout_marginLeft="15dp"
